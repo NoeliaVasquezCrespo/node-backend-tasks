@@ -3,9 +3,52 @@ GET http://localhost:3000/
 
 ### Crear una nueva tarea
 POST http://localhost:3000/tasks
-Content-Type: "application/json"
+Content-Type: application/json
 
 {
     "title": "Tarea 1",
     "detail": "Detalle de la tarea 1"
+}
+
+###Listar todas las tareas
+GET http://localhost:3000/tasks
+Content-Type: application/json
+
+
+###Obtener una tarea
+GET http://localhost:3000/tasks/2
+Content-Type: application/json
+
+
+### Editar una tarea
+PUT http://localhost:3000/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Tarea modificada",
+    "detail": "Detalle modificado"
+}
+
+### Eliminar una tarea
+
+DELETE http://localhost:3000/tasks/1
+Content-Type: application/json
+
+
+### Marcar tarea completada
+PUT http://localhost:3000/tasks/3?status=COMPLETED
+Content-Type: application/json
+
+{
+    "title": "Tarea modificada",
+    "detail": "detalle modificado"
+}
+
+###Marcar pendiente
+PUT http://localhost:3000/tasks/2?status=PENDING
+Content-Type: application/json
+
+{
+    "title": "Tarea modificada",
+    "detail": "detalle modificado"
 }
