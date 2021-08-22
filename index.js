@@ -36,7 +36,6 @@ app.get("/tasks/:taskId", function(req, res) {
 /// Editar una tarea
 app.put("/tasks/:taskId", jsonParser, function(req, res) {
     var task = tasks.find(task => task.id == req.params.taskId);
-
     task.title = req.body.title;
     task.detail = req.body.detail;
     res.json(task);
@@ -47,9 +46,6 @@ app.put("/tasks/:taskId", jsonParser, function(req, res) {
 ///Eliminar una tarea
 app.delete("/tasks/:taskId",jsonParser, function(req, res) {
     var index = tasks.findIndex(task => task.id == req.params.taskId);
-
-    console.log("Index "+index);
-
     tasks.splice(index,req.params.taskId);
     res.sendStatus(200);
 
